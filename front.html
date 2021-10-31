@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="front.css">
+    <title>Tax Mitra</title>
+</head>
+
+<body>
+    <div class="d">
+        <nav class="navbar">
+            <ul>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="saver.html">Mr.Saver</a></li>
+                <li><a href="index.html">Tax Calculator</a></li>
+                <li><a>Home</a> </li>
+
+
+
+            </ul>
+        </nav>
+        <img src="40435.jpg" alt="Background image">
+        <div class="faq">
+            <h1>FAQs</h1>
+
+            <button class="accordion">What is Tax Mitra?
+            </button>
+            
+            <div class="panel">
+            
+                <p><b>T</b>ax Mitra is a perfect solution for newbies for tax system.<br>It can calculate your tax and can give legit
+                    method to minimize your tax.</p>
+            
+            </div>
+            
+            <button class="accordion">What is Tax Calculator?</button>
+            <div class="panel">
+            
+                <p><b>T</b>ax calculator can calculate your tax upon your annual income from various sources.</p>
+            
+            </div>
+            
+            <button class="accordion">What is Mr.Saver?
+            </button>
+            <div class="panel">
+            
+                <p><b>Mr.</b>Saver is only their for you.Mr.Saver Will give you the best plan to minimize tax upon your income.
+                </p>
+            
+            </div>
+            
+            <script>
+            
+            var acc = document
+            .getElementsByClassName("accordion");
+            
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+            acc[i].onclick = function(){
+              this.classList.toggle("active");
+              this.nextElementSibling.classList
+              .toggle("show");
+              }
+            }
+            
+            </script>
+
+       
+    </div>
+    </div>
+</body>
+
+</html>

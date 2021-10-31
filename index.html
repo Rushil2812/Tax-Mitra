@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Tax Calculator</h1>
+    </div>
+    <div class="container">
+    <!-- Heading Of Website -->
+    
+
+    <!-- Website Introduction -->
+   <div class="intro">
+       <marquee> <sm>Hello,welcome to the Tax Mitra.Here you can calculate your income tax and get alot many tips to save your
+            tax through Legit methods.</sm></marquee>
+    </div>
+
+    <!-- Tax Calculator -->
+    <br>
+    <div class="calc">
+
+    <form id="formo" class="inpu-group">
+    <lable>Income From Salary</lable>
+    <br>
+    <input type="text" id="income" placeholder="0" required>
+    <br>
+
+    <lable>Income From Business</lable>
+    <br>
+    <input type="text" placeholder="0" id="business" required>
+    <br>
+
+    <lable>Income From Property(Rent)</lable>
+    <br>
+    <input type="text" placeholder="0" id="rent" required>
+    <br>
+
+    <lable>Income From Capital Gain(Property Sell)</lable>
+    <br>
+    <input type="text" placeholder="0" id="capital" required>
+    <br>
+
+    <lable>Income From Other Source</lable>
+    <br>
+    <sm id="ex">(Ex:Interest From Saving Account or Fixed Deposite)</sm>
+    <br>
+    <input type="text" placeholder="0" id="os" required>
+    <br>
+    <button type="button" class="nxt" onclick="fo()">Next</button>
+</form>
+
+
+<form id="formt" class="inpu-group">
+
+  <h3>Under Section 80C(Upto 1,50,000Rs.)</h3>
+  <lable>LIC Premium</lable>
+  <br>
+  <input type="text" id="lic" placeholder="0" required>
+  <br>
+
+  <lable>Public Provident Fund(PPF)</lable>
+  <br>
+  <input type="text" id="ppf" placeholder="0" required>
+  <br>
+
+  <lable>Tution Fees</lable>
+  <br>
+  <input type="text" id="tf" placeholder="0" required>
+  <button type="button" class="nxt" onclick="foo()">Next</button>
+
+</form>
+
+<form id="formth" class="inpu-group">
+  <h3>Under Section 80D</h3>
+  <lable>Amount</lable>
+  <br>
+  <input type="text" id="amount" placeholder="0" required>
+  <br>
+
+  <h3>Under Section 80TTA</h3>
+  <lable>Amount</lable>
+  <br>
+  <input type="text" id="amt" placeholder="0" required>
+
+  <h3>Other</h3>
+  <lable>Advance Tax Amount</lable>
+  <br>
+  <input type="text" id="advance" placeholder="0" required>
+  <button type="button" class="nxt" onclick="foooo()">Submit</button>
+
+</form>
+
+<form id="formf"  class="inpu-group">
+    <lable>Total tax</lable>
+    <input type="text" id="result">
+    <br>
+    <input type="reset" value="reset" id="resett">
+</form>
+    </div>
+</div>
+
+<script>
+var w=document.getElementById("formo");
+var x=document.getElementById("formt");
+var y=document.getElementById("formth");
+var z=document.getElementById("formf");
+
+
+function foooo()
+{
+    y.style.left="-400px";
+    z.style.left="50px";
+    var incomee=document.getElementById("income").value;
+    var businesss=document.getElementById("business").value;
+    var capitall=document.getElementById("capital").value;
+    var rentt=document.getElementById("rent").value;
+    var oss=document.getElementById("os").value;
+    var resultt=document.getElementById("result").value;
+    var mr=0;
+    var licc=document.getElementById("lic").value;
+    var ppff=document.getElementById("ppf").value;
+    var tfee=document.getElementById("tf").value;
+    var mr1=0;
+    var amountt=document.getElementById("amount").value;
+    var amtt=document.getElementById("amt").value;
+    var adv=document.getElementById("advance").value;
+    var mr2=0;
+    incomee=parseInt(incomee);
+    businesss=parseInt(businesss);
+    capitall=parseInt(capitall);
+    rentt=parseInt(rentt);
+    oss=parseInt(oss);
+    licc=parseInt(licc);
+    ppff=parseInt(ppff);
+    tfee=parseInt(tfee);
+    amountt=parseInt(amountt);
+    amtt=parseInt(amtt);
+    adv=parseInt(adv);
+
+    mr=incomee+businesss+capitall+rentt+oss;
+    mr1=licc+ppff+tfee;
+
+    if(amountt>25000)
+    amountt=25000;
+    if(amtt>10000)
+    amtt=10000;
+
+    mr2=amountt+amtt+adv;
+
+    if(mr1>150000)
+    mr1=150000;
+
+
+   var netamt=mr-mr1-mr2;
+   var tax=parseFloat(0);
+    netamt=netamt-50000;
+   if(netamt<250000)
+   tax=parseFloat(0);
+   else if(netamt<500000 && netamt>250000)
+    tax=parseFloat((netamt-250000)*0.05);
+    else if(netamt<1000000 && netamt>500000)
+    tax=parseFloat((netamt-500000)*0.2+12500);
+    else
+    tax=parseFloat((netamt-1000000)*0.3+112500);
+
+    if(tax>=12500)
+    tax=tax+parseFloat(0.04*tax);
+
+    result.value=tax;
+}
+
+function foo()
+{
+    
+    x.style.left="-400px";
+    y.style.left="50px";
+   
+
+}
+function fo()
+{
+    w.style.left="-400px";
+    x.style.left="50px";
+    
+
+}
+
+
+
+</script>
+</body>
+
+</html>

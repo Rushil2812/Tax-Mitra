@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="saver.css">
+</head>
+
+<body>
+    <h1>Mr.Saver</h1>
+    <div id="list"></div>
+    <div id="chat">
+        <input type="text" id="a">
+        <input type="button" value="send" onClick="g()" id="b">
+    </div>
+    <script>
+        function g() {
+            var list = document.getElementById("list");
+            var text = document.getElementById("a");
+            var a = document.createElement("p");
+            a.id = "one";
+
+            var mess = a.textContent = text.value;
+            mess = mess.toLowerCase();
+            var kl = parseInt(mess);
+            list.appendChild(a);
+
+            var b = document.createElement("p");
+            b.id = "two";
+
+            a.style.marginLeft = "500px";
+            b.style.marginLeft = "10px";
+
+            if (mess.match("hello") || mess.match("hi")) {
+                b.textContent = "hi,how can i help you";
+
+            }
+
+            else if (mess.match("thanks") || mess.match("thank you")) {
+                b.textContent = "You are welcomed";
+
+            }
+
+            else if (mess.match("your name") || mess.match("your code")) {
+                b.textContent = "Mr.Saver";
+            }
+
+            else if (mess.match("i want to save tax") || mess.match("tax saving")||mess.match("save tax") || mess.match("tax save")) {
+                b.textContent = "Oh,well Can you tell me your taxable income.";
+            }
+
+
+            else if (kl > 0 && kl < 250000) {
+                b.textContent = "You are not under any taxable slab so don't need to pay tax";
+            }
+
+
+            else if (kl > 250000 && kl <= 500000) {
+                b.textContent = "Oh! I see You are under 5% tax slab.But dont worry you can rebate 100% tax under section 87A.:)";
+            }
+
+            else if (kl > 500000 && kl <= 700000) {
+                b.textContent = "You can get Rs.50000 standard deduction and can invest upto Rs. 1,50,000 in PPF,ELSS,ULIP,NPS.And as your income goes less than Rs.5lac you can rebate the whole taxable amount.;)";
+            }
+
+            else if (kl > 700000 && kl <= 785000) {
+                b.textContent = "You can get Rs.50000 standard deduction and can invest upto Rs. 1,50,000 PPF,ELSS,ULIP,NPS under section 80C. ->Now if you are investing in NPS so you may get additional Rs.50,000 deduction under section 80CCD(1B). ->Also you can invest upto 25,000 in insurance under section 80D. ->And also on saving account income may get 10,000 deduction under section 80TTA. ->And as your income goes less than Rs.5lac you can rebate the whole taxable amount.;)";
+            }
+
+            else if (kl > 785000 && kl <= 900000) {
+                b.textContent = "You can get Rs.50000 standard deduction and can invest upto Rs. 1,50,000 PPF,ELSS,ULIP,NPS under section 80C. ->Now if you are investing in NPS so you may get additional Rs.50,000 deduction under section 80CCD(1B). ->And as your income goes less than Rs.5lac you can rebate the whole taxable amount.;)";
+            }
+
+            else if (mess.match("how are you")) {
+                b.textContent = "I m fine what about you";
+            }
+
+            else if (mess.match("ok")) {
+                b.textContent = "ok,So what can I do for you";
+            }
+
+            else {
+                b.textContent = "Sorry,I can't understand you";
+
+            }
+            list.appendChild(b);
+            text.value = "";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@200&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+    <button type="submit" onclick="change1()" id="bt1">Night mode</button>
+    <button type="submit" onclick="change()" id="bt2">Day Mode</button>
+    <div class="blog" id="bl">
+        <h2><b>Lorem ipsum dolor sit amet </b></h2>
+        <h5>9/16/2021,Thursday,12:00PM</h5>
+        <img src="img.jpg" alt="">
+        <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae accusamus qui quidem illo necessitatibus
+            nulla nostrum, dolorem laborum voluptate molestias. Voluptatem magnam pariatur nemo beatae, accusamus eius
+            quidem delectus accusantium debitis iure voluptas atque consequatur cupiditate.</h5>
+    </div>
+
+    <script>
+        var a=document.getElementById("bl");
+        var b=document.getElementsByTagName("body")[0];
+        var c=document.getElementById("bt1");
+        var d=document.getElementById("bt2");
+        function change()
+        {
+            a.style.backgroundColor="black";
+            a.style.color="white";
+            b.style.backgroundColor="white";
+            d.style.backgroundColor="white";
+            d.style.color="white";
+            d.style.border="0";
+            c.style.backgroundColor="black";
+            c.style.color="white";
+            c.style.border="10px";
+         }
+        function change1()
+        {
+            a.style.backgroundColor="white";
+            a.style.color="black";
+            b.style.backgroundColor="black";
+            c.style.backgroundColor="black";
+            c.style.color="black";
+            c.style.border="0";
+            d.style.backgroundColor="white";
+            d.style.color="black";
+            d.style.border="10px";
+        }
+    </script>
+</body>
+
+</html>
